@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<ul id="tipos"</ul>  
+
+@section MiJS
+{
+    <script>
+        var url = "http://localhost:52558/api/Tipos";
+        $.getJSON(url,undefined,function(respuesta) {
+            for (var i = 0; i < respuesta.length; i++) {
+                var texto = "<li>" + respuesta[i].nombre + "</li>";
+                $("#tipos").append(texto);
+            }
+        })
+
+
+
+    </script>
+}
